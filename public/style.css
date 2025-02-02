@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+
+:root {
+  --blue: #26293a;
+  --light-blue: #2f3349;
+  --black: #242424;
+  --white: #bbbdcc;
+  --gray: #bbbbbb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.poppins-light {
+  font-family: "Poppins", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  background-color: var(--light-blue);
+  color: var(--white);
+  font-family: "Poppins", serif;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  background: var(--blue);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+}
+
+.activity {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #dddddd11;
+}
+
+.activity img {
+  width: 60px;
+  height: 60px;
+  margin-right: 15px;
+}
+
+.activity .info {
+  flex: 1;
+}
+
+.activity h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.activity p {
+  margin: 5px 0;
+  color: var(--gray);
+  font-size: 14px;
+}
