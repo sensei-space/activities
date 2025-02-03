@@ -1,4 +1,5 @@
 let locale = "it";
+let needsFloorFilter = false;
 
 let defaultPalette = [
   { color: "#FFFFFF", label: "White" }, // White
@@ -91,6 +92,7 @@ let activitiesContainer;
 
 
 disableRightClick();
+getUrlParams();
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -115,6 +117,9 @@ function loadJson() {
 
 function addActivity(activity) {
   if (activity.info.locales && locale in activity.info.locales) {
+
+    if(needsFloorFilter && activity.needsFloor === true) return;
+
     const title = activity.info.locales[locale].title || "";
     if(title === "") return;
 
@@ -245,4 +250,14 @@ function disableRightClick() {
   document.addEventListener("contextmenu", function (e) {
     e.preventDefault();
   });
+}
+
+function getUrlParams() {
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.has("l")) {
+    locale = urlParams.get("l");
+  }
+  if (urlParams.has("nf")) {
+    needsFloorFilter = true;
+  }
 }

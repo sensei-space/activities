@@ -1,6 +1,7 @@
 import os
 import json
 import requests
+import time
 
 # Set the destination directory
 DEST_DIR = "./public/data/"
@@ -12,11 +13,16 @@ os.makedirs(CATEGORIES_DIR, exist_ok=True)
 os.makedirs(ACTIVITIES_DIR, exist_ok=True)
 
 # Download the list.json file
+firstcall_url = "http://127.0.0.1/api/activities/?refresh"
 list_url = "http://127.0.0.1/api/activities/list"
 list_path = os.path.join(DEST_DIR, "list.json")
 
 print("Downloading list.json...")
 try:
+    response = requests.get(firstcall_url)
+    #wait for 5 seconds
+    time.sleep(5)
+
     response = requests.get(list_url)
     response.raise_for_status()
     with open(list_path, "wb") as f:
