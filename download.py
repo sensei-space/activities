@@ -15,7 +15,7 @@ os.makedirs(ACTIVITIES_DIR, exist_ok=True)
 # Download the list.json file
 firstcall_url = "http://127.0.0.1/api/activities/?refresh"
 list_url = "http://127.0.0.1/api/activities/list"
-list_path = os.path.join(DEST_DIR, "list.json")
+list_path = os.path.join(DEST_DIR, "activities.json")
 
 print("Downloading list.json...")
 try:

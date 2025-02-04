@@ -1,0 +1,152 @@
+{
+    "integrations": {
+        "title": {
+            "it": "Integrazioni disponibili",
+            "en": "Available integrations",
+            "fr": "Intégrations disponibles",
+            "es": "Integraciones disponibles",
+            "de": "Verfügbare Integrationen"
+        },
+        "description": {
+            "it": "Scopri le integrazioni disponibili per arricchire l'esperienza di apprendimento e terapeutica. Scegli tra una vasta gamma di contenuti multimediali, attività interattive e strumenti di supporto per personalizzare il tuo percorso.",
+            "en": "Discover the available integrations to enrich the learning and therapeutic experience. Choose from a wide range of multimedia content, interactive activities, and support tools to customize your pathway.",
+            "fr": "Découvrez les intégrations disponibles pour enrichir l'expérience d'apprentissage et thérapeutique. Choisissez parmi une large gamme de contenus multimédias, d'activités interactives et d'outils de support pour personnaliser votre parcours.",
+            "es": "Descubre las integraciones disponibles para enriquecer la experiencia de aprendizaje y terapéutica. Elije entre una amplia gama de contenidos multimedia, actividades interactivas y herramientas de apoyo para personalizar tu recorrido.",
+            "de": "Entdecken Sie die verfügbaren Integrationen, um das Lern- und Therapieerlebnis zu bereichern. Wählen Sie aus einer Vielzahl von Multimedia-Inhalten, interaktiven Aktivitäten und Unterstützungstools, um Ihren Weg zu personalisieren."
+        },
+        "brandPolicy": {
+            "it": "I marchi seguenti e i loghi sono di proprietà dei rispettivi titolari e sono utilizzati a puro scopo illustrativo.",
+            "en": "The following brands and logos are property of their respective owners and are used for illustrative purposes only.",
+            "fr": "Les marques et logos suivants sont la propriété de leurs propriétaires respectifs et sont utilisés à des fins purement illustratives.",
+            "es": "Las siguientes marcas y logotipos son propiedad de sus respectivos propietarios y se utilizan únicamente con fines ilustrativos.",
+            "de": "Die folgenden Marken und Logos sind Eigentum ihrer jeweiligen Inhaber und werden nur zu illustrativen Zwecken verwendet."
+        },
+        "items": [
+            {
+                "id": "YouTube",
+                "locales": {
+                    "it": {
+                        "title": "YouTube",
+                        "description": "Accedi a un vasto catalogo di video educativi e di intrattenimento per arricchire l'apprendimento e le attività terapeutiche. Riproduci contenuti adatti al tuo contesto, stimola la curiosità e favorisci l'interazione."
+                    },
+                    "en": {
+                        "title": "YouTube",
+                        "description": "Access a vast library of educational and entertainment videos to enhance learning and therapeutic activities. Play curated content suitable for your setting, stimulate curiosity, and encourage interaction."
+                    },
+                    "fr": {
+                        "title": "YouTube",
+                        "description": "Accédez à une vaste bibliothèque de vidéos éducatives et de divertissement pour enrichir l'apprentissage et les activités thérapeutiques. Diffusez du contenu adapté à votre contexte, stimulez la curiosité et encouragez l'interaction."
+                    },
+                    "es": {
+                        "title": "YouTube",
+                        "description": "Accede a una amplia biblioteca de videos educativos y de entretenimiento para enriquecer el aprendizaje y las actividades terapéuticas. Reproduce contenido adecuado para tu entorno, estimula la curiosidad y fomenta la interacción."
+                    },
+                    "de": {
+                        "title": "YouTube",
+                        "description": "Greifen Sie auf eine große Bibliothek mit Bildungs- und Unterhaltungsinhalten zu, um das Lernen und therapeutische Aktivitäten zu bereichern. Spielen Sie passende Inhalte ab, wecken Sie Neugier und fördern Sie Interaktion."
+                    }
+                }
+            },
+            {
+                "id": "Wordwall",
+                "locales": {
+                    "it": {
+                        "title": "Wordwall",
+                        "description": "Crea e utilizza attività interattive personalizzate per supportare l'apprendimento e lo sviluppo cognitivo. Perfetto per insegnanti e terapisti che desiderano rendere il processo educativo più coinvolgente."
+                    },
+                    "en": {
+                        "title": "Wordwall",
+                        "description": "Create and use customized interactive activities to support learning and cognitive development. Perfect for educators and therapists aiming to make the learning process more engaging."
+                    },
+                    "fr": {
+                        "title": "Wordwall",
+                        "description": "Créez et utilisez des activités interactives personnalisées pour soutenir l'apprentissage et le développement cognitif. Idéal pour les enseignants et les thérapeutes souhaitant rendre le processus éducatif plus engageant."
+                    },
+                    "es": {
+                        "title": "Wordwall",
+                        "description": "Crea y utiliza actividades interactivas personalizadas para apoyar el aprendizaje y el desarrollo cognitivo. Perfecto para educadores y terapeutas que desean hacer el proceso de aprendizaje más atractivo."
+                    },
+                    "de": {
+                        "title": "Wordwall",
+                        "description": "Erstellen und nutzen Sie interaktive, personalisierte Aktivitäten zur Unterstützung des Lernens und der kognitiven Entwicklung. Ideal für Lehrkräfte und Therapeuten, die den Lernprozess ansprechender gestalten möchten."
+                    }
+                }
+            },
+            {
+                "id": "Mozaik",
+                "locales": {
+                    "it": {
+                        "title": "Mozaik",
+                        "description": "Esplora modelli 3D interattivi per rendere l'apprendimento più visivo e immersivo. Perfetto per materie scientifiche e didattica speciale, favorisce la comprensione attraverso esperienze dinamiche."
+                    },
+                    "en": {
+                        "title": "Mozaik",
+                        "description": "Explore interactive 3D models to make learning more visual and immersive. Ideal for science subjects and special education, promoting understanding through dynamic experiences."
+                    },
+                    "fr": {
+                        "title": "Mozaik",
+                        "description": "Explorez des modèles 3D interactifs pour rendre l'apprentissage plus visuel et immersif. Idéal pour les sciences et l'éducation spécialisée, favorisant la compréhension par des expériences dynamiques."
+                    },
+                    "es": {
+                        "title": "Mozaik",
+                        "description": "Explora modelos 3D interactivos para hacer el aprendizaje más visual e inmersivo. Ideal para ciencias y educación especial, promoviendo la comprensión a través de experiencias dinámicas."
+                    },
+                    "de": {
+                        "title": "Mozaik",
+                        "description": "Erkunden Sie interaktive 3D-Modelle, um das Lernen visueller und immersiver zu gestalten. Ideal für Naturwissenschaften und Sonderpädagogik, fördert das Verständnis durch dynamische Erfahrungen."
+                    }
+                }
+            },
+            {
+                "id": "Deezer",
+                "locales": {
+                    "it": {
+                        "title": "Deezer",
+                        "description": "Ascolta musica e suoni ambientali per creare un ambiente stimolante o rilassante. Perfetto per supportare attività didattiche, esercizi di rilassamento o esperienze multisensoriali."
+                    },
+                    "en": {
+                        "title": "Deezer",
+                        "description": "Listen to music and ambient sounds to create a stimulating or relaxing environment. Perfect for supporting educational activities, relaxation exercises, or multisensory experiences."
+                    },
+                    "fr": {
+                        "title": "Deezer",
+                        "description": "Écoutez de la musique et des sons ambiants pour créer une ambiance stimulante ou relaxante. Parfait pour accompagner des activités éducatives, des exercices de relaxation ou des expériences multisensorielles."
+                    },
+                    "es": {
+                        "title": "Deezer",
+                        "description": "Escucha música y sonidos ambientales para crear un entorno estimulante o relajante. Perfecto para apoyar actividades educativas, ejercicios de relajación o experiencias multisensoriales."
+                    },
+                    "de": {
+                        "title": "Deezer",
+                        "description": "Hören Sie Musik und Umgebungsgeräusche, um eine anregende oder entspannende Atmosphäre zu schaffen. Perfekt zur Unterstützung von Bildungsaktivitäten, Entspannungsübungen oder multisensorischen Erlebnissen."
+                    }
+                }
+            },
+            {
+                "id": "Unsplash",
+                "locales": {
+                    "it": {
+                        "title": "Unsplash",
+                        "description": "Accedi a una vasta raccolta di immagini di alta qualità per arricchire materiali educativi, progetti creativi e percorsi terapeutici visivi."
+                    },
+                    "en": {
+                        "title": "Unsplash",
+                        "description": "Access a vast collection of high-quality images to enhance educational materials, creative projects, and visual therapeutic pathways."
+                    },
+                    "fr": {
+                        "title": "Unsplash",
+                        "description": "Accédez à une vaste collection d'images de haute qualité pour enrichir les supports pédagogiques, les projets créatifs et les parcours thérapeutiques visuels."
+                    },
+                    "es": {
+                        "title": "Unsplash",
+                        "description": "Accede a una amplia colección de imágenes de alta calidad para enriquecer materiales educativos, proyectos creativos y rutas terapéuticas visuales."
+                    },
+                    "de": {
+                        "title": "Unsplash",
+                        "description": "Greifen Sie auf eine große Sammlung hochwertiger Bilder zu, um Bildungsinhalte, kreative Projekte und visuelle therapeutische Ansätze zu bereichern."
+                    }
+                }
+            }
+        ]
+    }
+}

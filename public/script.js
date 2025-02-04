@@ -23,12 +23,19 @@ let defaultPalette = [
 ];
 
 let dictionary = {
-  title: {
+  activitiesTitle: {
     en: "Available activities in",
     it: "Attività disponibili in",
     fr: "Activités disponibles en",
     es: "Actividades disponibles en",
     de: "Verfügbare Aktivitäten in",
+  },
+  activitiesDescription: {
+    en: "SENSEi offers a range of interactive activities designed together with industry specialists to support learning, therapy and personal development. Thanks to innovative digital tools, users can explore, play and learn in an engaging and adaptable environment.", 
+    it: "SENSEi offre una gamma di attività interattive progettate insieme agli specialisti del settore per supportare l'apprendimento, la terapia e lo sviluppo personale. Grazie a strumenti digitali innovativi, gli utenti possono esplorare, giocare e imparare in un ambiente coinvolgente e adattabile.",
+    fr: "SENSEi propose une gamme d'activités interactives conçues en collaboration avec des spécialistes de l'industrie pour soutenir l'apprentissage, la thérapie et le développement personnel. Grâce à des outils numériques innovants, les utilisateurs peuvent explorer, jouer et apprendre dans un environnement engageant et adaptable.", 
+    es: "SENSEi ofrece una variedad de actividades interactivas diseñadas junto con especialistas de la industria para apoyar el aprendizaje, la terapia y el desarrollo personal. Gracias a herramientas digitales innovadoras, los usuarios pueden explorar, jugar y aprender en un entorno atractivo y adaptable.", 
+    de: "SENSEi bietet eine Reihe interaktiver Aktivitäten, die zusammen mit Branchenspezialisten entwickelt wurden, um Lernen, Therapie und persönliche Entwicklung zu unterstützen. Dank innovativer digitaler Tools können Benutzer in einer ansprechenden und anpassungsfähigen Umgebung erkunden, spielen und lernen.",
   },
   parameters: {
     en: "Parameters",
@@ -89,6 +96,7 @@ let dictionary = {
 };
 
 let activitiesContainer;
+let integrationsContainer;
 
 
 disableRightClick();
@@ -96,20 +104,41 @@ getUrlParams();
 
 document.addEventListener("DOMContentLoaded", function () {
 
-  document.getElementById("title").innerText = t("title");
+  document.getElementById("activitiesTitle").innerText = t("activitiesTitle");
+  document.getElementById("activitiesDescription").innerText = t("activitiesDescription");
 
   activitiesContainer = document.getElementById("activitiesList");
-  loadJson();
+
+  integrationsContainer = document.getElementById("integrationsList");
+  loadJsons();
 });
 
-function loadJson() {
-  fetch("./data/list.json")
+function loadJsons() {
+  //ACTIVITIES
+  fetch("./data/activities.json")
     .then((response) => response.json())
     .then((data) => {
       const activities = data.activities || [];
 
       activities.forEach((activity) => {
         addActivity(activity);
+      });
+    })
+    .catch((error) => console.error("Error loading list.json:", error));
+
+
+    //INTEGRATIONS
+    fetch("./data/integrations.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const integrations = data.integrations || [];
+
+      document.getElementById("integrationsTitle").innerText = integrations.title[locale];
+      document.getElementById("integrationsDescription").innerText = integrations.description[locale];
+      document.getElementById("integrationsBrandPolicy").innerText = integrations.brandPolicy[locale];
+
+      integrations.items.forEach((integration) => {
+        addIntegration(integration);
       });
     })
     .catch((error) => console.error("Error loading list.json:", error));
@@ -127,7 +156,7 @@ function addActivity(activity) {
     let icon = "./data/activities/" + activity.id + ".png";
 
     const activityDiv = document.createElement("div");
-    activityDiv.classList.add("activity");
+    activityDiv.classList.add("item");
 
     //set attributes in data-
     activityDiv.setAttribute("data-id", activity.id);
@@ -186,6 +215,32 @@ function addActivity(activity) {
     activitiesContainer.appendChild(activityDiv);
   } else {
     console.log("No locale found for activity", activity.id);
+  }
+}
+
+function addIntegration(integration) {
+  if (integration.locales && locale in integration.locales) {
+    const title = integration.locales[locale].title || "";
+    if(title === "") return;
+
+    const description = integration.locales[locale].description || "";
+    let icon = "./data/integrations/integration_" + integration.id + ".png";
+
+    const integrationDiv = document.createElement("div");
+    integrationDiv.classList.add("item");
+
+    integrationDiv.innerHTML = `
+                  <div class="image">
+                      <img src="${icon}" alt="${title}">
+                  </div>
+                  <div class="info">
+                      <h3>${title}</h3>
+                      <p>${description}</p>
+                  </div>
+              `;
+    integrationsContainer.appendChild(integrationDiv);
+  } else {
+    console.log("No locale found for integration", integration.id);
   }
 }
 
