@@ -162,11 +162,37 @@ b {
 
 .button {
   display: inline-block;
-  padding: 3px;
+  padding: 3px 5px;
   background: var(--light-blue);
   color: var(--white);
   border: none;
   border-radius: 5px;
+}
+
+.print{
+  position: absolute;
+  top: 10px;
+  right: 60px;
+  width: 40px;
+  height: 40px;
+  background: var(--blue);
+  cursor: pointer;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.printParams{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  background: var(--blue);
+  cursor: pointer;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-track {
@@ -216,8 +242,19 @@ b {
     font-family: "Poppins", serif;
   }  
 
+  .print{
+    display: none;
+  }
+
+  .printParams{
+    display: none;
+  }
+
+  .button{
+    background-color: rgb(221, 221, 221);
+  }
+
   .container {
-    /*use new page*/
     page-break-before: always;
     background: white;
     color: black !important;
@@ -226,6 +263,7 @@ b {
   #logo {
     display: none;
   }
+
   #logo_print {
     display: inline-block;
   }
@@ -233,18 +271,18 @@ b {
   .image img {
     width: 70px;
     height: 70px;
-    border-radius: 100%;
+    border-radius: 10px;
   }
 
   .item {
     border-top: 1px solid gray;
   }
-
-  /*summary {
+  
+  summary {
     display: none;
-  }*/
+  }
 
-  .container.yesParams details {
+  body.printWithParameters details {
     display: block;
   }
 }
