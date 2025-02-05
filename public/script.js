@@ -316,3 +316,18 @@ function getUrlParams() {
     needsFloorFilter = true;
   }
 }
+
+function printWithClass(className) {
+  let content = document.getElementById("printContent");
+
+  // Remove both styles first
+  content.classList.remove("printNoParameters", "printWithParameters");
+
+  // Add the selected style
+  content.classList.add(className);
+
+  // Print after a short delay
+  setTimeout(() => {
+      window.print();
+  }, 500);
+}

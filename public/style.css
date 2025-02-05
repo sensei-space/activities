@@ -27,8 +27,6 @@ body {
   font-family: "Poppins", serif;
 }
 
-
-
 .container {
   max-width: 800px;
   margin: auto;
@@ -41,23 +39,23 @@ body {
 
 .titleContainer {
   text-align: center;
-  width: 100%;  
+  width: 100%;
   margin-bottom: 20px;
 }
 
 .titleContainer {
   text-align: center;
-  width: 100%;  
+  width: 100%;
   margin-bottom: 20px;
 }
 
-.mainDescription{  
+.mainDescription {
   margin-bottom: 20px;
   font-size: 14px;
   text-align: justify;
 }
 
-.brandPolicy{
+.brandPolicy {
   margin-bottom: 10px;
   font-size: 10px;
   text-align: right;
@@ -68,11 +66,16 @@ h1 {
   display: inline-block;
 }
 
-#logo {
+#logo,
+#logo_print {
   width: 160px;
   margin: 0 auto;
   display: inline-block;
   vertical-align: sub;
+}
+
+#logo_print {
+  display: none;
 }
 
 .item {
@@ -183,22 +186,65 @@ b {
   background-color: var(--blue);
 }
 
-
 /* media query for smartphones */
 @media (max-width: 600px) {
-  #logo{
+  #logo {
     width: 80%;
   }
   .container {
     margin-top: 0px;
     padding: 10px;
   }
-  .item{
+  .item {
     padding-left: 5px;
     padding-right: 5px;
   }
-  .image img{
+  .image img {
     width: 80px;
     height: 80px;
+  }
+}
+
+@media print {
+  * {
+    color: black !important;
+  }
+
+  body {
+    background: white;
+    color: black !important;
+    font-family: "Poppins", serif;
+  }  
+
+  .container {
+    /*use new page*/
+    page-break-before: always;
+    background: white;
+    color: black !important;
+  }
+
+  #logo {
+    display: none;
+  }
+  #logo_print {
+    display: inline-block;
+  }
+
+  .image img {
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+  }
+
+  .item {
+    border-top: 1px solid gray;
+  }
+
+  /*summary {
+    display: none;
+  }*/
+
+  .container.yesParams details {
+    display: block;
   }
 }
