@@ -169,7 +169,7 @@ b {
   border-radius: 5px;
 }
 
-.print{
+.print {
   position: absolute;
   top: 10px;
   right: 60px;
@@ -182,7 +182,7 @@ b {
   border-radius: 3px;
 }
 
-.printParams{
+.printParams {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -240,17 +240,22 @@ b {
     background: white;
     color: black !important;
     font-family: "Poppins", serif;
-  }  
+  }
 
-  .print{
+  .print {
     display: none;
   }
 
-  .printParams{
+  .printParams {
     display: none;
   }
 
-  .button{
+  .mainDescription {
+    text-align: justify;
+    font-size: 16px;
+  }
+
+  .button {
     background-color: rgb(221, 221, 221);
   }
 
@@ -277,7 +282,7 @@ b {
   .item {
     border-top: 1px solid gray;
   }
-  
+
   summary {
     display: none;
   }
