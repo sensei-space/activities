@@ -97,6 +97,8 @@ let dictionary = {
 
 let activitiesContainer;
 let integrationsContainer;
+let activities = [];
+let categories = [];
 
 disableRightClick();
 getUrlParams();
@@ -118,7 +120,8 @@ function loadJsons() {
   fetch("./data/activities.json")
     .then((response) => response.json())
     .then((data) => {
-      const activities = data.activities || [];
+      categories = data.categories || [];
+      activities = data.activities || [];
 
       activities.forEach((activity) => {
         addActivity(activity);
@@ -147,6 +150,7 @@ function loadJsons() {
 }
 
 function addActivity(activity) {
+  console.log("Adding activity", activity);
   if (activity.info.locales && locale in activity.info.locales) {
     if (needsFloorFilter && activity.needsFloor === true) return;
 
@@ -155,6 +159,8 @@ function addActivity(activity) {
 
     const description = activity.info.locales[locale].description || "";
     let icon = "./data/activities/" + activity.id + ".png";
+
+    let model = getActivityModel(activity);
 
     const activityDiv = document.createElement("div");
     activityDiv.classList.add("item");
@@ -210,6 +216,7 @@ function addActivity(activity) {
                   </div>
                   <div class="info">
                       <h3>${title}</h3>
+                      <span>${model}</span>
                       <p>${description}</p>
                       ${parametersHTML}
                   </div>
@@ -245,6 +252,18 @@ function addIntegration(integration) {
   } else {
     console.log("No locale found for integration", integration.id);
   }
+}
+
+function getActivityModel(activity) {
+  //modelID is activity.model as an array of models, get each modelID, translate it using categories.model[id][locale] and join them with a comma
+  let model = "";
+  if (activity.model) {
+    model = activity.model
+      .map((modelID) => categories.model[modelID][locale] || "")
+      .join(", ");
+  }
+  
+  return model;
 }
 
 function createPalette(param) {
