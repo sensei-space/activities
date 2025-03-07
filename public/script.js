@@ -1,5 +1,6 @@
 let locale = "it";
 let needsFloorFilter = false;
+let incorporatedSite = false;
 
 let defaultPalette = [
   { color: "#FFFFFF", label: "White" }, // White
@@ -105,14 +106,32 @@ getUrlParams();
 
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("activitiesTitle").innerText = t("activitiesTitle");
-  document.getElementById("activitiesDescription").innerText = t(
-    "activitiesDescription"
-  );
+  document.getElementById("activitiesDescription").innerText = t("activitiesDescription");
 
   activitiesContainer = document.getElementById("activitiesList");
 
   integrationsContainer = document.getElementById("integrationsList");
   loadJsons();
+
+  if (incorporatedSite) {
+    try {
+      //hide title and description
+      document.getElementById("activitiesTitle").style.display = "none";
+      document.getElementById("activitiesDescription").style.display = "none";
+      //hide #logo and #logo_print
+      document.getElementById("logo").style.display = "none";
+      document.getElementById("logo_print").style.display = "none";
+      //hide div with class .print and .printParams
+      document.querySelectorAll(".print").forEach((element) => {
+        element.style.display = "none";
+      });
+      document.querySelectorAll(".printParams").forEach((element) => {
+        element.style.display = "none";
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  }
 });
 
 function loadJsons() {
@@ -135,12 +154,9 @@ function loadJsons() {
     .then((data) => {
       const integrations = data.integrations || [];
 
-      document.getElementById("integrationsTitle").innerText =
-        integrations.title[locale];
-      document.getElementById("integrationsDescription").innerText =
-        integrations.description[locale];
-      document.getElementById("integrationsBrandPolicy").innerText =
-        integrations.brandPolicy[locale];
+      document.getElementById("integrationsTitle").innerText = integrations.title[locale];
+      document.getElementById("integrationsDescription").innerText = integrations.description[locale];
+      document.getElementById("integrationsBrandPolicy").innerText = integrations.brandPolicy[locale];
 
       integrations.items.forEach((integration) => {
         addIntegration(integration);
@@ -176,14 +192,10 @@ function addActivity(activity) {
           parametersHTML += `<li><b>${param.text}</b>: ${t("yesno")}</li>`;
           break;
         case "button":
-          parametersHTML += `<li><b>${param.text}</b>: <div class="button">${
-            param.label || t("button")
-          }</div></li>`;
+          parametersHTML += `<li><b>${param.text}</b>: <div class="button">${param.label || t("button")}</div></li>`;
           break;
         case "slider":
-          parametersHTML += `<li><b>${param.text}</b>: ${t("from")} ${
-            param.min
-          } ${t("to")} ${param.max}</li>`;
+          parametersHTML += `<li><b>${param.text}</b>: ${t("from")} ${param.min} ${t("to")} ${param.max}</li>`;
           break;
         case "list":
           parametersHTML += `<li><b>${param.text}</b>: <ul>`;
@@ -258,11 +270,9 @@ function getActivityModel(activity) {
   //modelID is activity.model as an array of models, get each modelID, translate it using categories.model[id][locale] and join them with a comma
   let model = "";
   if (activity.model) {
-    model = activity.model
-      .map((modelID) => categories.model[modelID][locale] || "")
-      .join(", ");
+    model = activity.model.map((modelID) => categories.model[modelID][locale] || "").join(", ");
   }
-  
+
   return model;
 }
 
@@ -307,9 +317,7 @@ function createPalette(param) {
   // Generate HTML for the color palette
   let paletteHTML = `<div class="palette">`;
   palette.forEach((color) => {
-    paletteHTML += `<div style="background-color:${color.color}" class="color ${
-      color.selected ? "selected" : ""
-    }"></div>`;
+    paletteHTML += `<div style="background-color:${color.color}" class="color ${color.selected ? "selected" : ""}"></div>`;
   });
   paletteHTML += `</div>`;
 
@@ -337,6 +345,9 @@ function getUrlParams() {
   if (urlParams.has("nf")) {
     needsFloorFilter = true;
   }
+  if (urlParams.has("i")) {
+    incorporatedSite = true;
+  }
 }
 
 function printWithParameters(value) {
@@ -361,9 +372,7 @@ function printWithParameters(value) {
     //get when the print window is closed
     window.onafterprint = function () {
       // Remove the selected style
-      document
-        .getElementById("mainBody")
-        .classList.remove("printWithParameters");
+      document.getElementById("mainBody").classList.remove("printWithParameters");
       //remove open details
       document.querySelectorAll("details").forEach((details) => {
         details.removeAttribute("open");
