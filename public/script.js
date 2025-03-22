@@ -128,6 +128,8 @@ document.addEventListener("DOMContentLoaded", function () {
       document.querySelectorAll(".printParams").forEach((element) => {
         element.style.display = "none";
       });
+      //hide .integrationsContainer
+      document.getElementById("integrationsContainer").style.display = "none";
     } catch (e) {
       console.log(e);
     }
