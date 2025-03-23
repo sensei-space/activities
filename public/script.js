@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
       activitiesList.style.height = `${window.innerHeight - margin}px`;
 
       window.addEventListener("resize", () => {
-        let margin = 105;
+        let margin = 100;
         if (window.innerWidth < 600) {
           margin = 50;
         }
