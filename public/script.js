@@ -96,7 +96,7 @@ let dictionary = {
   },
 };
 
-let activitiesContainer;
+let activitiesList;
 let integrationsContainer;
 let activities = [];
 let categories = [];
@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("activitiesTitle").innerText = t("activitiesTitle");
   document.getElementById("activitiesDescription").innerText = t("activitiesDescription");
 
-  activitiesContainer = document.getElementById("activitiesList");
+  activitiesList = document.getElementById("activitiesList");
 
   integrationsContainer = document.getElementById("integrationsList");
   loadJsons();
@@ -130,6 +130,17 @@ document.addEventListener("DOMContentLoaded", function () {
       });
       //hide .integrationsContainer
       document.getElementById("integrationsContainer").style.display = "none";
+
+      //.activitiesContainer is 100% height
+      let activitiesContainer = document.getElementById("activitiesContainer");
+      activitiesContainer.style.height = "100%";
+      //body has blocked overflow
+      document.body.style.overflow = "hidden";
+      activitiesList.style.overflowY = "auto";
+      activitiesList.style.height = `${window.innerHeight - 100}px`;
+      window.addEventListener("resize", () => {
+        activitiesList.style.height = `${window.innerHeight - 100}px`;
+      });
     } catch (e) {
       console.log(e);
     }
@@ -236,7 +247,7 @@ function addActivity(activity) {
                   </div>
               `;
 
-    activitiesContainer.appendChild(activityDiv);
+    activitiesList.appendChild(activityDiv);
   } else {
     console.log("No locale found for activity", activity.id);
   }
