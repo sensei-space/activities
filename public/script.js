@@ -137,9 +137,19 @@ document.addEventListener("DOMContentLoaded", function () {
       //body has blocked overflow
       document.body.style.overflow = "hidden";
       activitiesList.style.overflowY = "auto";
-      activitiesList.style.height = `${window.innerHeight - 100}px`;
+
+      let margin = 100;
+      if (window.innerWidth < 600) {
+        margin = 50;
+      }
+      activitiesList.style.height = `${window.innerHeight - margin}px`;
+
       window.addEventListener("resize", () => {
-        activitiesList.style.height = `${window.innerHeight - 100}px`;
+        let margin = 105;
+        if (window.innerWidth < 600) {
+          margin = 50;
+        }
+        activitiesList.style.height = `${window.innerHeight - margin}px`;
       });
     } catch (e) {
       console.log(e);

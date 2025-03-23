@@ -25,6 +25,7 @@ body {
   background-color: var(--light-blue);
   color: var(--white);
   font-family: "Poppins", serif;
+  overflow-x: hidden;
 }
 
 .container {
@@ -35,6 +36,14 @@ body {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#activitiesContainer {
+  overflow-x: hidden;
+}
+
+#activitiesList {
+  overflow-x: hidden;
 }
 
 .titleContainer {
@@ -108,7 +117,6 @@ h1 {
   margin: 0;
   font-size: 18px;
   color: var(--whitest);
-  height: 20px;
 }
 
 .item span {
@@ -220,11 +228,9 @@ b {
   background-color: var(--white);
 }
 
-
-
 @page {
   size: auto; /* auto is the initial value */
-  margin: 10mm 10mm 10mm 10mm;     /* this affects the margin in the printer settings */
+  margin: 10mm 10mm 10mm 10mm; /* this affects the margin in the printer settings */
 }
 
 /* media query for smartphones */
@@ -247,6 +253,13 @@ b {
   .print,
   .printParams {
     display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .image img {
+    width: 40px;
+    height: 40px;
   }
 }
 
